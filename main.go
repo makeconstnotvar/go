@@ -6,4 +6,5 @@ func main() {
 	//fmt.Println("Индексы:", result)
 
 	//Rnd()
+	inorderTraversal(getTestData2())
 }
