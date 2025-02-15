@@ -1,3 +1,3 @@
-module go1
+module leet
 
 go 1.24

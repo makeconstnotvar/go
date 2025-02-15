@@ -8,25 +8,27 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func dfs(node *TreeNode) {
-	if node == nil {
-		return
-	}
-
-	fmt.Println(node.Val)
-
-	if node.Left != nil {
-		dfs(node.Left)
-	}
-
-	if node.Right != nil {
-		dfs(node.Right)
-	}
-}
-
 func inorderTraversal(root *TreeNode) []int {
+	var visited []int
+	var dfs = func(node *TreeNode) {}
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+
+		if node.Left != nil {
+			dfs(node.Left)
+		}
+
+		fmt.Println(node.Val)
+		visited = append(visited, node.Val)
+
+		if node.Right != nil {
+			dfs(node.Right)
+		}
+	}
 	dfs(root)
-	return nil
+	return visited
 }
 
 func getTestData1() *TreeNode {
