@@ -20,6 +20,7 @@ func Search(nums []int, target int) int {
 		} else {
 			start = mid + 1
 		}
+
 	}
 
 	return -1
